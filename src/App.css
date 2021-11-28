@@ -1,0 +1,176 @@
+/* font-family: 'Lora', serif; */
+/* font-family: 'Poppins', sans-serif; */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../src/assets/defi-kingdoms-bg.png);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.header {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header__logo {
+    animation: headerLogoAnimation 1s ease-in-out 1;
+}
+
+@keyframes headerLogoAnimation {
+    from {
+        transform: translateY(-500px);
+    }
+}
+
+
+/* #region main  */
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main__preTitle {
+    font-size: 22px;
+    color: #fff;
+    font-family: 'Lora', serif;
+    letter-spacing: 3px;
+    animation: mainPreTitleAnimation .5s cubic-bezier(.175, .885, .32, 1.275) 1;
+}
+
+
+@keyframes mainPreTitleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    60% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+.main__title {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 52px;
+
+    width: 80%;
+    margin-bottom: 50px;
+
+    color: #FBE375;
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 20%);
+    animation: mainTitleAnimation 1s cubic-bezier(.175, .885, .32, 1.275) 1;
+}
+
+@keyframes mainTitleAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    60% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
+
+.main__link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+    background-image: linear-gradient(to right, #63F043 0%, #14c25a 51%, #63F043 100%);
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #100F21;
+    padding: 16px 40px;
+    border-radius: 15px;
+    letter-spacing: 2px;
+
+    transition: all .3s linear;
+    animation: buttonAnimation 1.5s ease-in-out 1;
+}
+
+@keyframes buttonAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+}
+
+.main__link:hover {
+    box-shadow: 0px -10px 0px #14c25a85;
+    transform: translateY(10px);
+    background-image: linear-gradient(to right, #14c25a 0%, #63F043 51%, #14c25a 100%);
+}
+
+/* #endregion main  */
+
+
+
+
+/* #region media queries */
+
+@media (max-width:1024px) {
+    .main__title {
+        width: 90%;
+    }
+}
+
+@media (max-width:414px) {
+    .header__logo img {
+        width: 300px;
+    }
+    .main__preTitle {
+        display: none;
+    }
+
+    .main__title {
+        font-size: 38px;
+    }
+}
+
+@media (max-width:320px) {
+    .header__logo img {
+        width: 250px;
+    }
+    .main__title {
+        font-size: 30px;
+    }
+}
+
+/* #endregion */
